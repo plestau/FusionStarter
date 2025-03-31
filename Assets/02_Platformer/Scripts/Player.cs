@@ -77,7 +77,7 @@ namespace Starter.Platformer
 				_gameManager = FindObjectOfType<GameManager>();
 
 				// Set player nickname that is saved in UIGameMenu
-				Nickname = PlayerPrefs.GetString("PlayerName");
+				Nickname = PlayerPrefs.GetString("PlayerName", "DefaultName");
 			}
 
 			// In case the nickname is already changed,
@@ -240,7 +240,10 @@ namespace Starter.Platformer
 			if (HasStateAuthority)
 				return; // Do not show nickname for local player
 
-			Nameplate.SetNickname(Nickname);
+			if (Nameplate != null)
+			{
+				Nameplate.SetNickname(Nickname);
+			}
 		}
 	}
 }

@@ -17,6 +17,9 @@ namespace Starter.Platformer
         [Networked]
         private NetworkBool _isMovingToDestino1 { get; set; } = true;
 
+        [Networked]
+        private Vector3 _networkedPosition { get; set; }
+
         private Vector3 posDestino1;
         private Vector3 posDestino2;
 
@@ -51,14 +54,16 @@ namespace Starter.Platformer
             Platform.MovePosition(newPosition);
 
             // Mueve manualmente el modelo visual si no es hijo del Rigidbody
-            transform.position = newPosition;
-        }
+            visual.position = newPosition;
 
+            // Sincroniza la posición de la plataforma en todos los clientes
+            _networkedPosition = newPosition;
+        }
 
         public override void Render()
         {
-            transform.position = Platform.position;
+            // Asegúrate de que la posición visual se actualice correctamente
+            visual.position = _networkedPosition;
         }
-
     }
 }
