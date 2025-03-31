@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2238814700190985454}
   m_Layer: 0
   m_Name: FallingPlatform
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -73,6 +73,7 @@ MonoBehaviour:
   NestedObjects: []
   NetworkedBehaviours:
   - {fileID: 763210378690773948}
+  ForceRemoteRenderTimeframe: 0
 --- !u!65 &3787512772778835576
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -233,6 +234,9 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:

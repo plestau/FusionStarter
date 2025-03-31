@@ -11,37 +11,37 @@ PrefabInstance:
     - target: {fileID: -6837124491713774970, guid: 3358d0375142d304099358a49699eff2,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -3.8
       objectReference: {fileID: 0}
     - target: {fileID: -6837124491713774970, guid: 3358d0375142d304099358a49699eff2,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -1.21
       objectReference: {fileID: 0}
     - target: {fileID: -6837124491713774970, guid: 3358d0375142d304099358a49699eff2,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -7.27
       objectReference: {fileID: 0}
     - target: {fileID: -6837124491713774970, guid: 3358d0375142d304099358a49699eff2,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.99539626
       objectReference: {fileID: 0}
     - target: {fileID: -6837124491713774970, guid: 3358d0375142d304099358a49699eff2,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -6837124491713774970, guid: 3358d0375142d304099358a49699eff2,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0.095845714
       objectReference: {fileID: 0}
     - target: {fileID: -6837124491713774970, guid: 3358d0375142d304099358a49699eff2,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -6837124491713774970, guid: 3358d0375142d304099358a49699eff2,
         type: 3}
@@ -51,7 +51,7 @@ PrefabInstance:
     - target: {fileID: -6837124491713774970, guid: 3358d0375142d304099358a49699eff2,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: -11
       objectReference: {fileID: 0}
     - target: {fileID: -6837124491713774970, guid: 3358d0375142d304099358a49699eff2,
         type: 3}
@@ -62,6 +62,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: platform-large
+      objectReference: {fileID: 0}
+    - target: {fileID: -1977322264606445529, guid: 3358d0375142d304099358a49699eff2,
+        type: 3}
+      propertyPath: m_TagString
+      value: Platform
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

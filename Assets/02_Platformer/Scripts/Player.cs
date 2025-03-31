@@ -119,8 +119,7 @@ namespace Starter.Platformer
 			FootstepSound.enabled = KCC.IsGrounded && KCC.RealSpeed > 1f;
 			FootstepSound.pitch = KCC.RealSpeed > SprintSpeed - 1 ? 1.5f : 1f;
 
-			ScalingRoot.localScale = Vector3.Lerp(ScalingRoot.localScale, Vector3.one, Time.deltaTime * 8f);
-
+			ScalingRoot.localScale = Vector3.Lerp(ScalingRoot.localScale, new Vector3(0.5f, 0.5f, 0.5f), Time.deltaTime * 8f);
 			var emission = DustParticles.emission;
 			emission.enabled = KCC.IsGrounded && KCC.RealSpeed > 1f;
 		}
