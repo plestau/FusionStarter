@@ -43,11 +43,12 @@ namespace Starter.Platformer
 
 		[Networked, HideInInspector, Capacity(24), OnChangedRender(nameof(OnNicknameChanged))]
 		public string Nickname { get; set; }
-		[Networked, HideInInspector, OnChangedRender(nameof(OnCollectedCoinsChanged))]
+		[Networked, OnChangedRender(nameof(OnCollectedCoinsChanged))]
 		public int CollectedCoins { get; set; }
 
 		[Networked, OnChangedRender(nameof(OnJumpingChanged))]
 		private NetworkBool _isJumping { get; set; }
+		private Vector3 _lastFlagPosition;
 
 		// Animation IDs
 		private int _animIDSpeed;
@@ -70,6 +71,11 @@ namespace Starter.Platformer
 			}
 		}
 
+		public void SetLastFlagPosition(Vector3 position)
+		{
+			_lastFlagPosition = position;
+		}
+
 		public override void Spawned()
 		{
 			if (HasStateAuthority)
@@ -78,33 +84,34 @@ namespace Starter.Platformer
 
 				// Set player nickname that is saved in UIGameMenu
 				Nickname = PlayerPrefs.GetString("PlayerName", "DefaultName");
+
+				// Initialize _lastFlagPosition with the player's initial position
+				_lastFlagPosition = KCC.Position;
 			}
 
 			// In case the nickname is already changed,
 			// we need to trigger the change manually
 			OnNicknameChanged();
 		}
-
+		
 		public override void FixedUpdateNetwork()
 		{
 			if (_gameManager.IsGameFinished)
 			{
-				// Let players fall even when game is finished (KCC.Move is called)
 				ProcessInput(default);
 				return;
 			}
 
 			if (KCC.Position.y < -15f)
 			{
-				// Player fell, let's respawn
-				Respawn(_gameManager.GetSpawnPosition(), false);
+				// Player fell, let's respawn at the last flag position
+				Respawn(_lastFlagPosition, false);
 			}
 
 			ProcessInput(PlayerInput.CurrentInput);
 
 			if (KCC.IsGrounded)
 			{
-				// Stop jumping
 				_isJumping = false;
 			}
 

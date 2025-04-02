@@ -49,7 +49,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc9f590381e24d17b98962186aa84baa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FallDelay: 0.25
+  FallDelay: 0.75
   ReactivationDelay: 1
   Collider: {fileID: 3787512772778835576}
   Platform: {fileID: 7613553675703135257}
