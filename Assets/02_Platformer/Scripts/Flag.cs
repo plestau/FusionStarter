@@ -31,7 +31,6 @@ namespace Starter.Platformer
             else
             {
                 player.SetLastFlagPosition(transform.position);
-                player.CollectedCoins = 0;
             }
         }
     }
